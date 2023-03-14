@@ -15,10 +15,10 @@ def test_succesfful_login():
     time.sleep(2)
     
     if ("https://www.saucedemo.com/inventory.html" == driver.current_url):
-        # Write it green color
+
         print("\033[92m" + "Test 1/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 1/8 Failed" + "\033[0m")
 
 def test_locked_out_user():
@@ -30,10 +30,10 @@ def test_locked_out_user():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Sorry, this user has been locked out." == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 2/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 2/8 Failed" + "\033[0m")
 
 def test_invalid_username():
@@ -45,10 +45,10 @@ def test_invalid_username():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Username and password do not match any user in this service" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 3/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 3/8 Failed" + "\033[0m")
 
 def test_invalid_password():
@@ -60,10 +60,10 @@ def test_invalid_password():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Username and password do not match any user in this service" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 4/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 4/8 Failed" + "\033[0m")
 
 def test_empty_username():
@@ -75,10 +75,10 @@ def test_empty_username():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Username is required" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 5/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 5/8 Failed" + "\033[0m")
 
 def test_empty_password():
@@ -90,10 +90,10 @@ def test_empty_password():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Password is required" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 6/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 6/8 Failed" + "\033[0m")
 
 def test_empty_username_and_password():
@@ -105,10 +105,10 @@ def test_empty_username_and_password():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Username is required" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 7/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 7/8 Failed" + "\033[0m")
 
 def test_login_with_special_characters():
@@ -120,10 +120,10 @@ def test_login_with_special_characters():
 
     error_message = driver.find_element(By.CSS_SELECTOR, "h3[data-test='error']")
     if ("Epic sadface: Username and password do not match any user in this service" == error_message.text):
-        # Write it green color
+
         print("\033[92m" + "Test 8/8 Passed" + "\033[0m")
     else:
-        # Write it red color
+
         print("\033[91m" + "Test 8/8 Failed" + "\033[0m")
 
 def teardown_module():
