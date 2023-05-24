@@ -1,0 +1,20 @@
+describe('Place an Order', () => {
+    it('Places an order successfully', () => {
+      cy.visit('https://www.saucedemo.com/')
+      cy.get('#user-name').type('standard_user')
+      cy.get('#password').type('secret_sauce')
+      cy.get('#login-button').click()
+      cy.get('.inventory_item').first().click()
+      cy.get('.btn_inventory').click({ multiple: true })
+      cy.get('.shopping_cart_link').click()
+      cy.get('.cart_item').should('have.length', 6)
+      cy.contains('CHECKOUT').click()
+      cy.get('#first-name').type('John')
+      cy.get('#last-name').type('Doe')
+      cy.get('#postal-code').type('12345')
+      cy.contains('CONTINUE').click()
+      cy.contains('FINISH').click()
+      cy.url().should('include', '/checkout-complete.html')
+    })
+  })
+  
